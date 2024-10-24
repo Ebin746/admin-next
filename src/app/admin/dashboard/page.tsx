@@ -3,9 +3,10 @@
 
 import React from 'react';
 import Layout from '../Layout';
+
 const DashboardPage = () => {
   return (
-    <Layout/>
+    <Layout><div>Children</div></Layout>
   );
 };
 

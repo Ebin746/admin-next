@@ -7,7 +7,7 @@ const Login = () => {
     <div className="bg-black min-h-screen grid place-items-center">
       <button
         className="bg-white py-4 px-8 flex gap-2 items-center"
-        onClick={() => signIn("google",{callbackUrl:"/"})}
+        onClick={() => signIn("google", { callbackUrl: "/" })}
       >
         <FaGoogle size={30} />
         <span>Sign in with Google</span>
