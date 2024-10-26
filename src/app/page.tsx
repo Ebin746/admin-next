@@ -1,9 +1,12 @@
-import React from 'react'
-import Sidebar from '@/components/admin-panel/sidebar'
+"use client"
+import React from "react"
+import Sidebar from "@/components/admin-panel/sidebar"
+
 const page = () => {
   return (
-    <Sidebar></Sidebar>
-    
+
+        <Sidebar></Sidebar>
+
   )
 }
 

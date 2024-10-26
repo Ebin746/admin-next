@@ -4,7 +4,7 @@ import { GrTransaction } from "react-icons/gr";
 import { IoAnalytics, IoSettings } from "react-icons/io5";
 import { RiShoppingCartLine } from "react-icons/ri";
 import { usePathname } from "next/navigation";
-import Link from "next/link"; // Added this import
+import Link from "next/link";
 
 const Sidebar = () => {
   const pathName = usePathname();
@@ -38,16 +38,20 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="bg-white w-[300px] min-h-screen p-4 shrink-0">
-      <div className="flex items-center gap-4">
-        <img className="size-12 rounded-lg" src="/path-to-your-logo.png" alt="logo" /> {/* Ensure src is valid */}
-        <h2 className="text-[20px] font-serif">Brave coder</h2>
+    <div className="bg-gray-800 w-[300px] min-h-screen p-4 shrink-0 text-gray-200">
+      <div className="flex items-center gap-4 p-2">
+        <img className="w-10 h-10 rounded-lg" src="/path-to-your-logo.png" alt="logo" />
+        <h2 className="text-[22px] font-bold tracking-wide text-teal-400">Brave Coder</h2>
       </div>
-      <ul className="space-y-4 mt-6">
+      <ul className="space-y-2 mt-6">
         {menus.map(menu => (
-          <Link key={menu.title} href={menu.href} className={`flex gap-2 items-center p-4 rounded-lg cursor-pointer hover:bg-pink-500 hover:text-white ${pathName.startsWith(menu.href) ? "bg-pink-500 text-white" : "bg-gray-50"}`}>
-            <div className="text-[20px]">{menu.icon}</div>
-            <p>{menu.title}</p>
+          <Link 
+            key={menu.title} 
+            href={menu.href} 
+            className={`flex gap-3 items-center p-3 rounded-md cursor-pointer text-gray-300 hover:bg-gray-600 hover:text-white transition-colors duration-200 ease-in-out ${pathName.startsWith(menu.href) ? "bg-teal-600 text-white" : "bg-gray-700"}`}
+          >
+            <div className="text-[22px]">{menu.icon}</div>
+            <p className="font-medium">{menu.title}</p>
           </Link>
         ))}
       </ul>

@@ -7,8 +7,8 @@ export async function GET(){
     try {
         await connectMongoDb();
         const data=await Product.find();
-        NextResponse.json(data);
+       return NextResponse.json(data);
     } catch (error) {
-        NextResponse.json({error,msg:"somthing went worng"},{status:501});
+        return NextResponse.json({error,msg:"somthing went worng"},{status:501});
     }
 }

@@ -19,15 +19,11 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   if (!session?.user) {
     return <Login />;
   }
-
   return (
-   
-    <div className="flex">
-
-      <div className="w-full h-full">
-        <div className="bg-gray-200 p-4 h-[calc(100vh-64px)]">{children}</div>
-      </div>
-      {isLoading && <Loader />} {/* Loader while Redux state is loading */}
+    <div className="flex min-h-screen bg-gray-100">
+      <Sidebar /> {/* Sidebar always visible */}
+      <main className="flex-grow p-6 bg-gray-200">{children}</main>
+      {isLoading && <Loader />} {/* Loader for Redux loading state */}
     </div>
   );
 };

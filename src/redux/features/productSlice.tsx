@@ -1,14 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-
+import { Iproduct } from "@/app/admin/dashboard/page";
 // Define the Iproduct interface
-interface Iproduct {
-    _id: string;
-    imgSrc: string;
-    fileKey: string;
-    price: string;  // Keep as string or change to number if needed
-    name: string;
-    category: string;
-}
+
 
 // Define the initial state of the product slice
 const initialState: Iproduct = {
