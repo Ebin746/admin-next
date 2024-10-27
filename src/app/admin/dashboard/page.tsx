@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Layout from '../Layout';
 import { useAppDispatch } from '@/redux/hooks';
 import { setLoading } from "@/redux/features/loadingSlice";
-
+import ProductRow from "@/components/admin-panel/ProductRow";
 export interface Iproduct {
   _id: string;
   imgSrc: string;
@@ -44,7 +44,11 @@ const DashboardPage = () => {
     <th>SR No</th>
   </tr>
 </thead>
-
+ <tbody>
+  {
+    product?.map((item,index)=>(<ProductRow key={item._id} srNo={index+1} product={item} setPopUp={setPopUp} setUpdateTable={setUpdateTable}/>))
+  }
+ </tbody>
      </table>
    </div>
 </div>

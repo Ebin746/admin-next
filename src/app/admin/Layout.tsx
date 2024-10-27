@@ -16,9 +16,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   }
 
   // Check if user is authenticated
-  if (!session?.user) {
-    return <Login />;
-  }
+  // if (!session?.user) {
+  //   return <Login />;
+  // }
   return (
     <div className="flex min-h-screen bg-gray-100">
       <Sidebar /> {/* Sidebar always visible */}
