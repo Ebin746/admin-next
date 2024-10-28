@@ -3,6 +3,7 @@ import { Iproduct } from '@/app/admin/dashboard/page';
 import { useAppDispatch } from '@/redux/hooks';
 import { CiEdit } from 'react-icons/ci';
 import { RiDeleteBin5Line } from 'react-icons/ri';
+import { setProduct } from '@/redux/features/productSlice';
 
 interface PropsType {
     srNo: number;
@@ -15,7 +16,7 @@ const ProductRow = ({ srNo, setPopUp, setUpdateTable, product }: PropsType) => {
     const dispatch = useAppDispatch();
 
     const OnEdit = () => {
-        dispatch(setUpdateTable(product));
+        dispatch(setProduct(product));
         setPopUp(true);
     };
 

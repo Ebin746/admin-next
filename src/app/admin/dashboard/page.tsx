@@ -5,6 +5,7 @@ import Layout from '../Layout';
 import { useAppDispatch } from '@/redux/hooks';
 import { setLoading } from "@/redux/features/loadingSlice";
 import ProductRow from "@/components/admin-panel/ProductRow";
+import PopProps from "@/components/admin-panel/popProps";
 export interface Iproduct {
   _id: string;
   imgSrc: string;
@@ -32,7 +33,9 @@ const DashboardPage = () => {
 
   return (
     <Layout>
+
 <div>
+
    <div className="bg-white h-[calc(100vh-96px)] rounded-lg p-4">
     <div className="text-3xl">All products</div>
      <table className="w-full">
@@ -48,10 +51,13 @@ const DashboardPage = () => {
   {
     product?.map((item,index)=>(<ProductRow key={item._id} srNo={index+1} product={item} setPopUp={setPopUp} setUpdateTable={setUpdateTable}/>))
   }
+
  </tbody>
      </table>
+      {usePopUp &&  <PopProps setPopUp={setPopUp} setUpdateTable={setUpdateTable} />}
    </div>
 </div>
+
 </Layout>
   );
 };
