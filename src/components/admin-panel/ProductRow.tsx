@@ -30,7 +30,7 @@ const ProductRow = ({ srNo, setPopUp, setUpdateTable, product }: PropsType) => {
             <td className="py-4 px-6 text-gray-700">{product.name}</td>
             <td className="py-4 px-6 text-gray-700">${product.price}</td>
             <td className="py-4 px-6">
-                <image src={product.imgSrc} alt="product image" className="w-10 h-10 object-cover rounded" />
+                <img src={product.imgSrc} alt="product image" className="w-10 h-10 object-cover rounded" />
             </td>
             <td className="py-4 px-6 text-center">
                 <div className="flex items-center justify-center space-x-4">

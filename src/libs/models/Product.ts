@@ -1,10 +1,11 @@
 import {Schema,model,models} from "mongoose";
 
 const ProductScheam= new Schema({
-    _id: {
-        type: String, // Assuming you want to store _id as a string, typically it's ObjectId in MongoDB
-        required: true
-      },
+  _id: {
+    type: String,
+    
+    required: true
+},
       imgSrc: {
         type: String,
         required: true
