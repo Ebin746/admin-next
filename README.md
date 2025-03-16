@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js Admin Panel 🧑‍💻
+
+[![Version](https://img.shields.io/badge/version-0.1.0-blue)](https://github.com/yourusername/admin)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/yourusername/admin/blob/main/LICENSE)
+[![Build Status](https://img.shields.io/github/workflow/status/yourusername/admin/CI/main?label=build)](https://github.com/yourusername/admin/actions)
+
+
+A robust and user-friendly admin panel built with Next.js, Tailwind CSS, and Redux for managing products.
+
+## Table of Contents
+
+- [Project Overview](#project-overview)
+  - [Description](#description)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Development Guide](#development-guide)
+  - [Local Setup](#local-setup)
+  - [Building from Source](#building-from-source)
+  - [Testing](#testing)
+  - [Deployment](#deployment)
+- [Usage Documentation](#usage-documentation)
+  - [Basic Usage](#basic-usage)
+  - [API Reference](#api-reference)
+  - [Screenshots/Diagrams](#screenshotsdiagrams)
+- [Contributing](#contributing)
+  - [Contribution Workflow](#contribution-workflow)
+  - [Code Style Guidelines](#code-style-guidelines)
+  - [Issue/Bug Reporting](#issuebug-reporting)
+  - [Pull Request Submission](#pull-request-submission)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
+
+## Project Overview
+
+### Description
+
+This Next.js application provides a comprehensive admin panel for managing products.  It features a clean user interface, robust data handling, and secure authentication.  The application allows administrators to add, edit, delete, and view products, enhancing efficiency and organization.
+
+### Features
+
+- 🎯 Add new products with image uploads 🖼️
+- ✏️ Edit existing product details 📝
+- 🗑️ Delete products  
+- 📊 View all products in a user-friendly table
+- 🔒 Secure authentication with Google OAuth 
+- 🔄 Real-time updates using Redux
+
+### Tech Stack
+
+| Category      | Technology          |
+|---------------|----------------------|
+| Frontend      | Next.js, React, Tailwind CSS, React-Redux, react-icons |
+| Backend       | Next.js API Routes, Mongoose, MongoDB |
+| State Management | Redux Toolkit         |
+| File Upload    | UploadThing          |
+| Authentication | NextAuth.js, Google OAuth |
+
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
+- Node.js and npm (or yarn) installed
+- MongoDB instance running (adjust connection string in `src/libs/MongoConnect.ts` if needed)
+- A Google Cloud Platform project with OAuth credentials (for Google authentication).  Create `credentials.env` and set the variables as shown below.
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/admin.git
+   cd admin
+Install dependencies:
+
+npm install
+Create a .env file in the root directory with the following environment variables. Replace placeholders with your actual credentials:
+
+NEXTAUTH_SECRET=YOUR_NEXTAUTH_SECRET
+MONGODB_URL=YOUR_MONGODB_URI
+googleClientId=YOUR_GOOGLE_CLIENT_ID
+googleClientSecret=YOUR_GOOGLE_CLIENT_SECRET
+Start the development server:
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Development Guide
+Local Setup
+Follow the steps in the Getting Started section.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Building from Source
+npm run build
+Testing
+<!-- Placeholder for testing instructions -->
+This project uses [Testing Framework] for testing. Run tests with:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+npm run test
+Deployment
+<!-- Placeholder for deployment instructions -->
+Deploy to Vercel or your preferred platform. This project is configured for deployment to Vercel using the Next.js built-in features. Consider integrating a CI/CD pipeline (e.g., GitHub Actions) for automated builds and deployments.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Usage Documentation
+Basic Usage
+After deploying or running locally, access the admin panel via the specified URL. Log in using Google authentication. Then you can manage products.
 
-## Learn More
+API Reference
+Endpoints:
 
-To learn more about Next.js, take a look at the following resources:
+/api/get_products: GET - Retrieves all products.
+/api/add_product: POST - Adds a new product (requires imgSrc, fileKey, name, price, and category). Example request body:
+{
+  "imgSrc": "url-to-image",
+  "fileKey": "uploadthing-key",
+  "name": "Product Name",
+  "price": 19.99,
+  "category": "Electronics"
+}
+/api/delete_product/[id]: DELETE - Deletes a product by ID.
+/api/edit_products/[id]: PUT - Updates a product by ID.
+<!-- Placeholder for more detailed API documentation -->
+Screenshots/Diagrams
+<!-- SCREENSHOT: Login screen --> <!-- SCREENSHOT: Product list view --> <!-- SCREENSHOT: Product creation form -->
+Contributing
+Contribution Workflow
+Fork the repository.
+Create a new branch for your feature or bug fix.
+Make your changes and commit them.
+Push your branch to your forked repository.
+Create a pull request to the main repository.
+Code Style Guidelines
+Follow standard JavaScript/TypeScript conventions and the style enforced by ESLint (.eslintrc.json).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Issue/Bug Reporting
+Use the GitHub issue tracker to report bugs or suggest features. Please provide detailed information, including steps to reproduce the issue and any relevant error messages.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Pull Request Submission
+Ensure your code is well-documented, follows the code style guidelines, and passes all tests before submitting a pull request.
 
-## Deploy on Vercel
+License
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Copyright (c) 2024 [Your Name/Organization]
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Acknowledgments
+Thanks to the creators of Next.js, Tailwind CSS, Redux Toolkit, Mongoose, MongoDB, and UploadThing for providing such great tools.
+Inspiration for specific features may come from [List any other projects that inspired this project]
+[List any significant contributors here]
