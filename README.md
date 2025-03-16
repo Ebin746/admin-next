@@ -4,7 +4,6 @@
 [![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/yourusername/admin/blob/main/LICENSE)
 [![Build Status](https://img.shields.io/github/workflow/status/yourusername/admin/CI/main?label=build)](https://github.com/yourusername/admin/actions)
 
-
 A robust and user-friendly admin panel built with Next.js, Tailwind CSS, and Redux for managing products.
 
 ## Table of Contents
@@ -64,9 +63,10 @@ This Next.js application provides a comprehensive admin panel for managing produ
 
 ### Prerequisites
 
-- Node.js and npm (or yarn) installed
-- MongoDB instance running (adjust connection string in `src/libs/MongoConnect.ts` if needed)
-- A Google Cloud Platform project with OAuth credentials (for Google authentication).  Create `credentials.env` and set the variables as shown below.
+- Node.js and npm (or yarn) installed (version 16 or higher recommended)
+- MongoDB instance running (adjust connection string in `src/libs/MongoConnect.ts` if needed).  Ensure MongoDB is accessible from your development environment.
+- A Google Cloud Platform project with OAuth credentials (for Google authentication).
+
 
 ### Installation
 
@@ -94,12 +94,11 @@ Building from Source
 npm run build
 Testing
 <!-- Placeholder for testing instructions -->
-This project uses [Testing Framework] for testing. Run tests with:
+This project currently lacks dedicated unit/integration tests. Adding comprehensive testing is a high-priority task.
 
-npm run test
 Deployment
 <!-- Placeholder for deployment instructions -->
-Deploy to Vercel or your preferred platform. This project is configured for deployment to Vercel using the Next.js built-in features. Consider integrating a CI/CD pipeline (e.g., GitHub Actions) for automated builds and deployments.
+Deploy to Vercel or your preferred platform. This project is configured for deployment to Vercel using the Next.js built-in features. Consider integrating a CI/CD pipeline (e.g., GitHub Actions) for automated builds and deployments. Deployment instructions will be added soon.
 
 Usage Documentation
 Basic Usage
@@ -109,7 +108,7 @@ API Reference
 Endpoints:
 
 /api/get_products: GET - Retrieves all products.
-/api/add_product: POST - Adds a new product (requires imgSrc, fileKey, name, price, and category). Example request body:
+/api/add_product: POST - Adds a new product. Example request body:
 {
   "imgSrc": "url-to-image",
   "fileKey": "uploadthing-key",
@@ -119,6 +118,7 @@ Endpoints:
 }
 /api/delete_product/[id]: DELETE - Deletes a product by ID.
 /api/edit_products/[id]: PUT - Updates a product by ID.
+/api/uploadthing: POST - Handles file uploads via UploadThing. DELETE to delete files.
 <!-- Placeholder for more detailed API documentation -->
 Screenshots/Diagrams
 <!-- SCREENSHOT: Login screen --> <!-- SCREENSHOT: Product list view --> <!-- SCREENSHOT: Product creation form -->
@@ -126,7 +126,7 @@ Contributing
 Contribution Workflow
 Fork the repository.
 Create a new branch for your feature or bug fix.
-Make your changes and commit them.
+Make your changes and commit them with clear, concise messages.
 Push your branch to your forked repository.
 Create a pull request to the main repository.
 Code Style Guidelines
@@ -136,7 +136,7 @@ Issue/Bug Reporting
 Use the GitHub issue tracker to report bugs or suggest features. Please provide detailed information, including steps to reproduce the issue and any relevant error messages.
 
 Pull Request Submission
-Ensure your code is well-documented, follows the code style guidelines, and passes all tests before submitting a pull request.
+Ensure your code is well-documented, follows the code style guidelines, and passes any automated tests before submitting a pull request.
 
 License
 This project is licensed under the MIT License - see the LICENSE file for details.
@@ -144,6 +144,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Copyright (c) 2024 [Your Name/Organization]
 
 Acknowledgments
-Thanks to the creators of Next.js, Tailwind CSS, Redux Toolkit, Mongoose, MongoDB, and UploadThing for providing such great tools.
-Inspiration for specific features may come from [List any other projects that inspired this project]
-[List any significant contributors here]
+Thanks to the creators of Next.js, Tailwind CSS, Redux Toolkit, Mongoose, MongoDB, and UploadThing for providing such great tools. Inspiration for specific features may come from [List any other projects that inspired this project] [List any significant contributors here]
